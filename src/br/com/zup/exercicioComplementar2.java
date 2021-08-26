@@ -1,8 +1,13 @@
 package br.com.zup;
 
+import java.util.Scanner;
+
 public class exercicioComplementar2 {
     public static void main(String[] args) {
-        float area = 354.58F;
+        Scanner leitor = new Scanner(System.in);
+        System.out.println("Por favor digite o valor da área a ser pintada em metros quadrados: ");
+        float area = leitor.nextFloat();
+
         float litros = (area / 6);
         float latas = litros / 18;
         double latasArredondado = Math.ceil(latas);
@@ -19,14 +24,19 @@ public class exercicioComplementar2 {
         System.out.println("Ou seja, aredondando serão necessários " + galoesArredondado + " galões e será pago o valor de: R$ " + galoesArredondado * valorGalao + " no total");
 
         float folga = (litros * 0.1F);
-        float litrosNasLatas = ((folga + litros)/ 18);
+        float quantidadeTotalComFolga = (folga + litros);
+        float litrosNasLatas = (quantidadeTotalComFolga/ 18);
 
         int ipart = Math.toIntExact((long) litrosNasLatas);
         float fpart = litrosNasLatas - ipart;
-        double valorTotal = (ipart * valorLata) + valorGalao;
-        System.out.println("3- Com essa quantidade de área a ser pintada a melhor compra seria de " + ipart + " Latas de tinta.");
-        System.out.println("E como faltam " + fpart + " de litros de tinta para completar a área a ser pintada, sugerimos que compre mais um galão de tinta.");
-        System.out.println("Para esta compra, você irá pagar R$" +(ipart * valorLata) + " referente a quantidade de latas de tinta e pagará R$" + (valorGalao) + "pelo galão de tinta");
+        float delatasParaLitros =(fpart * 18);
+        float deFracaoDeLataParaGalao = (delatasParaLitros /3.6F);
+        double arredondaFracaoDeLataParaGalao = Math.ceil(deFracaoDeLataParaGalao);
+        double valorTotal = ((ipart * valorLata) +(arredondaFracaoDeLataParaGalao * valorGalao)) ;
+
+        System.out.println("3- Com essa quantidade de área a ser pintada, a melhor compra seria de " + ipart + " Latas de tinta.");
+        System.out.println("E como faltam " + fpart + " de litros de tinta para completar a área a ser pintada, sugerimos que compre mais " + deFracaoDeLataParaGalao + " unidades de galão de tinta");
+        System.out.println("Para esta compra, você irá pagar R$" +(ipart * valorLata) + " referente a quantidade de latas de tinta e pagará R$" + (arredondaFracaoDeLataParaGalao * valorGalao) + "pela quantidade de galão de tinta");
         System.out.println("Portanto o valor total da compra será de R$" + valorTotal);
     }
 }
