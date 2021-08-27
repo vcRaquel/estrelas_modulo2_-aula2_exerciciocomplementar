@@ -35,8 +35,8 @@ public class exercicioComplementar2 {
         double valorTotal = ((ipart * valorLata) +(arredondaFracaoDeLataParaGalao * valorGalao)) ;
 
         System.out.println("3- Com essa quantidade de área a ser pintada, a melhor compra seria de " + ipart + " Latas de tinta.");
-        System.out.println("E como faltam " + fpart + " de litros de tinta para completar a área a ser pintada, sugerimos que compre mais " + deFracaoDeLataParaGalao + " unidades de galão de tinta");
-        System.out.println("Para esta compra, você irá pagar R$" +(ipart * valorLata) + " referente a quantidade de latas de tinta e pagará R$" + (arredondaFracaoDeLataParaGalao * valorGalao) + "pela quantidade de galão de tinta");
+        System.out.println("Faltam " + fpart + " l de tinta para pintar a área selecionada, sugerimos que compre mais " + arredondaFracaoDeLataParaGalao + " unidades de galão de tinta");
+        System.out.println("Para esta compra, você irá pagar R$" +(ipart * valorLata) + " referente a quantidade de latas de tinta e pagará R$" + (arredondaFracaoDeLataParaGalao * valorGalao) + " pela quantidade de galão de tinta");
         System.out.println("Portanto o valor total da compra será de R$" + valorTotal);
     }
 }
